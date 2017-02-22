@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CV - Peter Szanto</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+<!--
+
+@media print
+  {
+  	.main_table {
+  		border: 2px solid;
+  	}
+	
+	td {
+		border: 1px solid;
+	}
+
+	th {
+		border: 3px solid;
+	}
+	
+	.noprint {
+		display: none;
+	}
+
+  }
+
+@media screen
+  {
+  	.main_table {
+  		border: 0px solid;
+  	}
+  }
+
+.hidden {
+	display : none;
+}
+
+#title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.rowHeader {
+	font-weight: bold;
+	background-color: #4a89c7;
+	color: #f0f6ff;
+}
+
+.rowHeader a:link,
+.rowHeader a:visited,
+.rowHeader a:hover {
+    color: #FFFFFF;
+}
+
+.rowEven, .row {
+	background-color: #f0f6ff;
+	color: #2b2b28;
+}
+
+.rowOdd {
+	background-color: #FFFFFF;
+	color: #2b2b28;
+}
+
+#local_div {
+	background-color: #4a89c7;
+}
+
+
+.intro {
+	border: solid 1px #ccc;
+}
+.picture {
+	font: 1em "Trebuchet MS";
+	color: #2b2b28;
+	border: 1px dashed #2b2b28;
+}
+
+.skillBox {
+	background : #2b2b28;
+	width : 98%;
+	margin : 10px;
+	border-spacing : 1px 1px;
+	padding : 1px;
+}
+
+.left {
+	float : left;
+}
+
+.right {
+	float : right;
+}
+
+p,h3 {
+    margin-top : 5px;
+    margin-bottom : 5px;
+}
+
+#articles {
+    padding-left: 21px;
+    padding-right: 11px;
+}
+
+#pdfheader {
+    text-align : center;
+}
+-->
+</style>
+
+<script>
+
+function getElementsByClass(searchClass,node,tag) {
+	var classElements = [];
+	if ( node == null )
+		node = document;
+	if ( tag == null )
+		tag = '*';
+	var els = node.getElementsByTagName(tag);
+	var elsLen = els.length;
+	var pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)");
+    var i,j;
+	for (i = 0, j = 0; i < elsLen; i++) {
+		if ( pattern.test(els[i].className) ) {
+			classElements[j] = els[i];
+			j++;
+		}
+	}
+	return classElements;
+}
+
+function colorRows() {
+	var rows = getElementsByClass("row", document, "*");
+
+    var className;
+	for(var i = 0; i < rows.length; i++) {
+		if (i % 2 == 0) {
+			className = "rowEven";
+		} else {
+			className = "rowOdd";
+		}
+		rows[i].setAttribute("class", className);
+	}
+
+}
+
+function hasClass(ele,cls) {
+	return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function removeClass(ele,cls) {
+	if (hasClass(ele,cls)) {
+    	var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+		ele.className=ele.className.replace(reg,' ');
+	}
+}
+
+function addClass(ele,cls) {
+	if (!hasClass(ele,cls)) {
+		ele.className=ele.className + ' ' + cls;
+	}
+}
+
+function showHeader() {
+
+    if (getQueryParamter("header") == 'pdf') {
+		removeClass(document.getElementById("pdfheader"), "hidden");
+
+    }
+
+}
+
+function init() {
+	colorRows();
+	showHeader();
+
+	if (location.href.substring(0, 4) == 'file') {
+		removeClass(document.getElementById("local_div"), "hidden");
+	}
+
+
+}
+
+function getQueryParamter( name ) {
+	  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	  var regexS = "[\\?&]"+name+"=([^&#]*)";
+	  var regex = new RegExp( regexS );
+	  var results = regex.exec( window.location.href );
+	  if( results == null ) {
+	    return "";
+	  }
+	  return results[1];
+}
+
+function getCurrentYear() {
+	var date=new Date();
+	return date.getFullYear();
+}
+
+function writeCurrentYear() {
+	document.write(getCurrentYear())
+}
+
+
+function writeElapsedYears( since ) {
+	document.write(getCurrentYear() - since)
+}
+
+
+</script>
+
+</head>
+
+<body onload="init();">
+<form action="" method="post" name="formCV" id="formCV">
+
+<div id="pdfheader" class="hidden">
+    <hr class="intro"/>
+    The latest version of this CV can be found online at <a href="http://peter.szantocsalad.hu/cv_pszanto.html">http://peter.szantocsalad.hu/cv_pszanto.html</a>
+    <hr class="intro"/>
+</div>
+
+<div align="left"><span id="title">CURRICULUM VITAE</span></div>
+<table id="background" border="0" width="98%" cellspacing="1" bgcolor="#2b2b28" align="center">
+    <tr>
+      <td>
+          <table class="main_table" cellspacing="1" width="100%">
+
+  <tr>
+    <td valign="top" class="rowHeader"><span id="personal">Personal details</span></td>
+  </tr>
+
+<!--
+  <tr class="row">
+    <td >
+<table class="picture" border="0" cellspacing="0" align="left">
+ <tr><td>
+
+
+    <img id="image1" src="http://peter.szantocsalad.hu/images/peter.jpg" alt="Szántó Péter" />
+
+
+	</td></tr>
+	
+</table>
+
+  </td>
+
+  </tr>
+ -->
+
+  <tr class="row">
+      <td colspan="2">
+
+      <table class="skillBox main_table">
+        <tr class="rowHeader">
+            <td><span id="firstname">First name</span></td>
+            <td><span id="familiyname">Family name</span></td>
+            <td><span id="dateofbirth">Date of birth</span></td>
+            <td><span id="palceofbirth">Place of birth</span></td>
+            <td><span id="nationality">Nationality</span></td>
+            <td><span id="marital">Marital status</span></td>
+            <td><span id="mobile">Mobile phone</span></td>
+            <td><span id="address">Postal address</span></td>
+            <td><span id="email">Email</span></td>
+        </tr    >
+
+        <tr class="row">
+          <td><b>Péter</b> </td>
+          <td ><b>Szántó</b></td>
+          <td >1978.12.12</td>
+          <td >Budapest</td>
+          <td><span id="nationality_desc">Hungarian</span></td>
+          <td ><span id="marital_desc">Married</span></td>
+          <td>+36 30 250 5331</td>
+          <td>Budapest</td>
+          <td><a href="mailto:cv@szantocsalad.hu">cv@szantocsalad.hu</a></td>
+        </tr>
+
+      </table>
+      </td>
+  </tr>
+
+  <tr>
+      <td class="rowHeader" colspan="2"><span id="summary">Summary</span></td>
+  </tr>
+  <tr class="row">
+      <td colspan="2">
+      <p id="summary_1">I am a Java architect, team lead, mentor and presenter. I have experience working on the client and vendor side.</p>
+      <ul>
+          <li id="summary_2">As an architect, I have passion for technology, but I prefer simplicity and business value over buzzwords. I can solve complex issues, may it be technical, organizational, or people related</li>
+          <li id="summary_3">As a team lead, I aim to understand team members and their motivation, help improving processes, encourage personal development and ensure delivering on time. I have experience in hiring and firing</li>
+          <li id="summary_4">As a developer, I am a clean code and TDD enthusiast, I like to participate in all phases of the software development life cycle, may it be database, design, client, server side development or testing.</li>
+      </ul>
+      <p id="summary_5">I worked in Budapest, Brussels, London, in the media, financial and healthcare industries. I have experience in Scrum, Kanban and XP.</p>
+      
+      </td>
+  </tr>
+
+
+  <tr>
+      <td class="rowHeader"><span id="profile">Profile pages</span></td>
+  </tr>
+  <tr class="row">
+  <td colspan="2">
+  <table class="skillBox main_table">
+	<tr class="rowHeader">
+		<td>LinkedIn</td>
+		<td>Stackowerflow</td>
+		<td>Articles</td>
+		<td width="100%">Github</td>
+	</tr>  
+  	<tr class="row">
+      <td>
+      	<div id="local_div" class="hidden">
+			<p><a href="http://www.linkedin.com/in/peterszanto"><img src="https://static.licdn.com/scds/common/u/images/logos/linkedin/logo_linkedin_flat_white_93x21.png" alt="LinkedID"/></a></p>
+			<!--<p><img src="http://peter.szantocsalad.hu/peter.jpg"/></p>-->
+		</div>
+
+		<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+		<script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/peterszanto" data-format="inline" data-related="false"></script>
+
+      </td>
+      <td valign="top">
+      
+<a href="http://stackoverflow.com/users/157591/peter-szanto">
+<img src="http://stackoverflow.com/users/flair/157591.png" width="208" height="58" alt="profile for Peter Szanto at Stack Overflow, Q&A for professional and enthusiast programmers" title="profile for Peter Szanto at Stack Overflow, Q&A for professional and enthusiast programmers"/>
+</a>
+      
+      </td>
+      <td>
+          <ul id="articles">
+              <li><a href="https://dzone.com/users/234839/szantopeter.html">DZone</a></li>
+              <li><a href="http://exampledriven.wordpress.com/">Blog</a></li>
+              <li><a href="https://prezi.com/user/tmyrxtf96_vt/">Presentations</a></li>
+          </ul>
+      </td>
+      <td>
+      
+<iframe src="http://githubbadge.appspot.com/badge/szantopeter" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameborder=0></iframe>      
+      
+      </td>
+    </tr>
+  </table>      
+  </td>
+  </tr>
+  <tr>
+      <td class="rowHeader"><span id="skills">Skills</span></td>
+  </tr>
+
+  <tr class="row">
+      <td colspan="2">
+
+  <table class="skillBox main_table" >
+    <tr class="rowHeader">
+      <th height="19" width="112"><b><span id="prog">Programming language</span></b></th>
+      <th height="19" width="104"><b><span id="lastused">Last used</span></b></th>
+      <th height="19" width="112"><span id="exp">Yrs. of Prof. Exp</span></th>
+      <th height="19" width="307"><b><span id ="technologies">Technologies</span></b></th>
+      <th height="19" width="248"><b><span id ="tools">Tools</span></b></th>
+    </tr>
+    <tr class="row">
+      <td width="112" height="19">Java / JEE</td>
+      <td height="19" width="104" align="center"><script type="text/javascript">writeCurrentYear()</script>	</td>
+      <td height="19" width="112" align="center"><script type="text/javascript">writeElapsedYears(2001);</script></td>
+      <td height="19" width="307">Java 8, Spring Cloud, Netflix OSS, Spring Boot, Spring MVC ,JAX-RS, CXF, JPA, Hibernate, JAXB2, Spring Batch, Cucumber, JUnit, TestNG, Profiling</td>
+      <td height="19" width="248">
+        <ul>
+          <li>IntelliJ, Eclipse, SpringSource Tool Suite, Netbeans</li>
+          <li>Gradle, Maven, Ant</li>
+          <li>Sonar, Team City, Jenkins, Confluence, Jira</li>
+          <li>Jetty, Tomcat, Weblogic, JBoss,</li>
+          <li>YourKit profiler, JRebel</li>
+        </ul>
+      </td>
+    </tr>
+    <tr class="row">
+      <td width="112" height="19">HTML / JavaScript</td>
+      <td height="19" width="104" align="center"><script type="text/javascript">writeCurrentYear();</script>	</td>
+      <td height="19" width="112" align="center"><script type="text/javascript">writeElapsedYears(2005);</script></td>
+      <td height="19" width="307">ES6, Object Oriented Javascript, jQuery and several plugins, CSS, XHTML</td>
+      <td height="19" width="248">Firebug, Chrome Inspector, IE Developer Toolbar</td>
+    </tr>
+      <tr class="row">
+          <td width="112" height="19">Node.JS</td>
+          <td height="19" width="104" align="center">2016</td>
+          <td height="19" width="112" align="center">0.5</td>
+          <td height="19" width="307">Node.JS, Grunt</td>
+          <td height="19" width="248"></td>
+      </tr>
+    <tr class="row">
+      <td width="112" height="19">Mobile</td>
+      <td height="19" width="104" align="center">2014</td>
+      <td height="19" width="112" align="center">1</td>
+      <td height="19" width="307">Android, PhoneGap, JQuery Mobile</td>
+      <td height="19" width="248"></td>
+    </tr>
+    <tr class="row">
+      <td width="112" height="32">C / C++</td>
+      <td height="32" width="104" align="center">2003</td>
+      <td height="32" width="112" align="center">3</td>
+      <td height="32" width="307">client-server applications, Linux
+        development</td>
+      <td height="32" width="248">Borland C++ Builder 4,5 Borland C++ KDevelop(Linux)</td>
+    </tr>
+  </table>
+
+  <table class="skillBox main_table">
+    <tr class="rowHeader">
+      <th width="104" ><b></b>
+      </th>
+      <th ><b><span id="technologies2"><span id="programmingrelated">Other programming related knowledge</span></span></b></th>
+    </tr>
+    <tr class="row">
+      <td width="104"><span id="cloud">Cloud</span></td>
+      <td>AWS, Elastic Beanstalk, Code Pipeline, Code Deploy, Heroku, Docker, Kubernetes</td>
+    </tr>
+    <tr class="row">
+      <td width="104"><span id="methodology">Methodology</span></td>
+      <td>Scrum, Kanban, TDD, BDD, Clean code</td>
+    </tr>
+    <tr class="row">
+      <td width="104"><span id="database">Database</span></td>
+      <td>Microsoft SQL Server, MongoDB, My SQL, Postgres, Access</td>
+    </tr>
+    <tr class="row">
+      <td width="104"><span id="vs">Version control</span></td>
+      <td>GIT, Svn, Perforce, CVS, Visual Source Safe</td>
+    </tr>
+
+    <tr class="row">
+      <td width="104"><span id="office">Office</span></td>
+      <td>Microsoft Office (Outlook, Word, Excel, Visio, PowerPoint, OneNote, Access), OpenOffice</td>
+    </tr>
+    <tr class="row">
+      <td width="104"><span id="twod">Graphics</span></td>
+      <td>Photoshop, Gimp, 3D Studio</td>
+    </tr>
+    <tr class="row">
+      <td width="104"><span id="other">Other</span></td>
+      <td><span id="other_detailed">Smart card technology, experience in POS terminals Sagem EFT 10 and
+        C-ZAM Smash</span>
+	  </td>
+    </tr>
+  </table>
+
+  <table class="skillBox main_table">
+     <tr class="rowHeader">
+       <td width="100%" ><div align="left"><b><span id="os">Operating System / Other</span></b>
+       </div></td>
+     </tr>
+     <tr class="row">
+       <td width="100%" ><div align="left">Linux (Ubuntu, Kubuntu, Wine, Shell script)</div></td>
+     </tr>
+      <tr class="row">
+       <td width="100%" ><div align="left">OS X</div></td>
+     </tr>
+     <tr class="row">
+       <td width="100%" ><div align="left">Hyper-V, VMWare, VirtualBox, Vagrant</div></td>
+     </tr>
+     <tr class="row">
+       <td width="100%"><div align="left">Windows</div></td>
+     </tr>
+  </table>
+
+      </td>
+    </tr>
+  <tr>
+    <td width="100%" class="rowHeader"><span id="prof">Professional background</span></td>
+  </tr>
+
+  <tr class="rowHeader">
+      <td>
+      2014 - Ongoing : <a href="http://www.epam.com/"><i>EPAM</i></a>, <span id="bud7">Budapest, Hungary</span>
+      <p>
+          <strong><span>2015 : Solution architect</span></strong></br>
+          <strong><span>2014 : Lead software engineer</span></strong>
+      </p>
+      </td>
+  </tr>
+  <tr class="row">
+      <td valign="top">
+          <ul>
+            <li>Team lead and co architect in a green field microservice project for a major global bank. I defined the key technologies (Java 8, Spring boot, hateoas, Spring cloud), negotiated with the customer the feasibility of those in the light of policy constraints. I set up development processes, CI, code review tool, VCS. I clarified the architecture and the high level requirements. I proposed several cross team initiatives, team structures, etc. Based on this structure our project was successfully scaled from 15 people, 2 teams to 80 people, 8 teams. Apart from my cross team responsibilities I was also leading a team and actively coding backend and frontend. I researched a number of topics for this project and to share knowledge I created a number of blog posts and presentations about it.</li>
+            <li>Joined an existing team as a lead, created POC to retrofit ORM (Hibernate), I was acting as a scrum master</li>
+          </ul>
+      </td>
+  </tr>
+
+  <tr class="rowHeader">
+      <td>
+      2013: <a href="http://www.emarsys.com/"><i>Emarsys</i></a>, <span id="bud6">Budapest, Hungary</span>
+      - <strong><span id="dev_ema">Java team lead and Architect</span></strong>
+      </td>
+  </tr>
+  <tr class="row">
+      <td valign="top"><span id="ema_1">As a team lead and architect my responsibility was to set up a complete green field Java project including the following :</span>
+        <ul>
+            <li id="ema_2">Defining the architecture and technology stack : Spring batch, Gradle, REST</li>
+            <li id="ema_3">Defining the coding and testing standards : TDD, BCC, Cucumber</li>
+            <li id="ema_4">Understanding legacy PHP code, create missing unit tests, and write REST client to integrate with the new system</li>
+            <li id="ema_5">Setting up continuous integration, continuous delivery, deployment automation. </li>
+            <li id="ema_6">Defining product road map and backlog</li>
+            <li id="ema_7">As a scrum master manage the process and the meetings</li>
+            <li id="ema_8">Recruiting team members</li>
+        </ul>
+
+      </td>
+  </tr>
+
+  <tr class="rowHeader">
+      <td>
+          <span id="from5">2004 - 2013 </span><a href="http://www.dig.com"><i>Disney On-Line EMEA</i></a>, <span id="bud5">Budapest, Hungary</span>
+          <p><strong>
+              <span id="dev_Disney_1">2010 : Technical manager</span> <br />
+              <span id="dev_Disney_2">2008 : Supervisor</span> <br />
+              <span id="dev_Disney_3">2006 : Senior Java Programmer</span> <br />
+              <span id="dev_Disney_4">2004 : Java Programmer</span>
+          </strong></p>
+      </td>
+  </tr>
+
+  <tr class="row">
+    <td >
+	<h3 id="overview">Overview</h3>
+	<p id="dis_o1">I was the Lead developer / Architect of Disney's international registration system serving 25 million guests in 50 countries. I had to closely work together with the London and Seattle office with daily conference calls, and regular visits. My responsibility included communicating to stakeholders and senior management, overseeing the software development process and participating in most phases, improving processes and introducing agile methodologies like Scrum and Kanban. I was a regular speaker in the internal technology trainings.</p>
+
+    <p>"... he has deep practical knowledge across core web software technologies as well as being a good project and people manager. I would have confidence in Peter managing complex J2EE oriented projects to tight timescales across many application areas, but especially complex web services and tools."
+    <span id="dis_recommendation">Former Disney Online EMEA Vice President. See all recommendations in my </span><a href="http://www.linkedin.com/profile/view?id=36611251&authType=name&authToken=62_b&trk=miniprofile-primary-view-button">LinkedIn profile</a></p>
+
+	<h3 id="dis_o2">Projects</h3>
+
+	<ul>
+		<li id="dis2013_1">DisneyID integration : Historically Disney had two guest registration systems with overlapping functionality. When management decided to merge the two as the leader of one of the systems I actively participated in the planning, prototype creation. The project involved 20 people in 4 timezones and managed to set up processes that allowed effective cooperation. Besides my day to day technical role I did code reviews and managed the inter team communication. The project affected 125 million users and it was successfully rolled out.</li>
+		<li id="dis2012_3">Facebook Integration : convince the business stakeholders, design the pageflow and architecture, find a technical solution (Spring social), manage the developers</li>
+		<li id="dis2012_5">Content Synchronizer : a tool to copy content between the staging and production content management system using CXF and Rest. My task was to create an architecture, agree on the business requirements, create the user stories, create a prototype and manage the other developers.</li>
+		<li id="dis2012_6">FS5 : a complete modernization of the registration user interface. My task was to create an advanced Javascript state machine, that can handle the complex states of the page, creating AJAX services, managing the technical teams, and applying new design created by a client side developer</li>
+		<li id="dis2011_1">Introducing Kanban : I drafted the rules, and states of the new Kanban process of our team</li>
+		<li id="dis2011_3">Disney universe community project : the goal of the project was to create a community project for the Disney Universe console game including a challenge administration interface, user profile and achievements page. My role was to get up to speed with the project very quickly and define the architecture, that interfaces, with PSN network, XBox Live, Registration systems, Facebook, Cloud, Java Backend. Additionally create a working prototype, negotiate with the US vendors, and the subcontractors</li>
+		<li id="dis2">Like service : similar to facebook like widget. My role was creating a proof of concept using JQuery, JQuery UI and Object Oriented JavaScript, defining the JS API interface, overview the DB design to ensure high availability and performance</li>
+		<li id="dis3">Security framework : Key generation, authentication, authorization and logging for the SOAP interface. My role was to outline the concept, I asked a team member to research the technology (Spring security was chosen), participated in the coding. I implemented the Database logging with Log4J, but optimized for performance and improved the functionality. The code was submitted back to the community.</li>
+		<li id="dis4">Recruitment several Java Developers and defining the recruiting process for the department.</li>
+		<li id="dis15">Introducing Scrum : identifying the scrum roles within the team</li>
+    </ul>
+    </td>
+  </tr>
+
+  <tr class="rowHeader" valign="top">
+      <td><span id="from1">2001 - 2003</span> : <a href="http://www.keyware.com"><i>Keyware Technologies,
+          Smart Card Division</i></a>, <span id="belg">Belgium, Brussels</span><strong> - <span id="dev1">Developer</span></strong>
+      </td>
+  </tr>
+
+  <tr class="row">
+    <td >
+      <ul>
+          <li id="keyware7">Embedded Java Payment application running on an EFT10 POS terminal for Maestro and BC/MC card. My responsibility was to implement the reversal command, and some parts of the magnetic and chip based payment. I had a complete understanding of the BC/MC payment application on the terminal side. The application was written in Java than compiled to C++ to run natively on the terminal.</li>
+          <li id="keyware2">Client-server application to manage hotline interventions. Windows client (C++ Builder 5), LINUX server (KDevelop). Database: Postgres. My responsibility was to develop both layer, and the further maintenance based on the collaboration with the users</li>
+          <li id="keyware3">ATEA Communication protocol and other low level routines for point of sale terminal Ascom EFT10 (pure C)</li>
+          <li id="keyware4">Java client application for the Belgian football league. to sell tickets and do seat reservation over the internet. Technologies: Java2D, XML, Soap</li>
+          <li id="keyware6">Java server for a web based customer loyalty application. Using XML, SOAP, JDBC</li>
+      </ul>
+    </td>
+  </tr>
+
+  <tr class="rowHeader" valign="top">
+      <td><span id="from3">1999</span> : <a href="http://www.nazka.hu"><i><span id="nazka">Nazka IT Consulting Ltd</span></i></a> .
+          <span id="bud2">Budapest, Hungary</span><strong> - <span id="dev2">Developer</span></strong>
+          <p></p>
+      </td>
+  </tr>
+
+  <tr class="row">
+    <td>
+        <ul>
+            <li id="profi">Client-server process management application for a computer service company. Written in Delphi 5 using ADO with MS Access and MS SQL Server. My responsibility was to create the functional and user interface specification, communication with the customer, programming and coordinating the work of other three developers.</li>
+            <li id="COSIMA">COSIMA (Computer Supported Industrial Maintenance) is a maintenance management program for industrial processes, sold in Germany. Written in Delphi 5.</li>
+        </ul>
+	</td>
+  </tr>
+
+  <tr class="rowHeader" valign="top">
+      <td><span id="from4">1998</span> : <a href="http://www.infomix.hu"><i><span id="infomix">Infomix Ltd</span></i></a>
+          <span id="bud1">Budapest, Hungary</span> - <strong><span id="dev3">Developer</span></strong>
+      </td>
+  </tr>
+
+  <tr class="row">
+    <td>
+        <ul>
+            <li id="xvedo">A welfare officer registering, reporting program in FoxPro. My responsibility was to maintain the application and communicate with the more than 100 users around the country.</li>
+            <li id="xamb">Two separate modules of a sanitary application.</li>
+            <li id="acc">Internal accounting application.</li>
+            <li id="reorg">DBase IV database repairing tool, scanner attaching.</li>
+            <li id="all">All these programs were made in FoxPro.</li>
+        </ul>
+	</td>
+  </tr>
+  <tr>
+    <td class="rowHeader"><span id="edu">Education</span></td>
+  </tr>
+  <tr class="row">
+    <td >1999 Harkály magániskola <strong><span id="degree">Software developer degree</span></strong> , <span id="thesis">Thesis</span> : <span id="ablak">Graphical windowing system for DOS, written in C++</span></td>
+  </tr>
+  <tr class="row">
+    <td >1997 Ady Endre Gimnázium <strong><span id="grad">Graduation</span></strong></td>
+  </tr>
+
+  <tr>
+    <td class="rowHeader" width="100%"><span id="lang">Languages</span></td>
+    </tr>
+  <tr class="row">
+    <td width="166"><span id="hung">Hungarian</span> : <span id="native">native</span></td>
+    </tr>
+  <tr class="row">
+    <td width="166"><span id="eng">English</span> : <span id="eng_detail">Reading: Business level, Writing: Business level, Speaking: Business level</span>
+	</td>
+  </tr>
+  <tr class="row">
+    <td width="166"><span id="french">French</span> : <span id="french_detail">Reading: basic, Writing:basic, Speaking:basic</span></td>
+    </tr>
+  <tr class="row">
+    <td width="166"><span id="german">German</span> : <span id="german_detail">Reading:low, Writing:low, Speaking:low</span></td>
+  </tr>
+
+  <tr>
+    <td class="rowHeader"><span id="hobby">Hobby</span></td>
+  </tr>
+  <tr class="row">
+    <td  colspan="2"><span id="hobbi_detail">Paragliding, snowboarding, playing music (Gamelan, Ukulele), RC modelling, retro computing</span></td>
+  </tr>
+</table>
+</td>
+    </tr>
+</table>
+
+</form>
+</body>
+</html>
